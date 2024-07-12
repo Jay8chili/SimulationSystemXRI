@@ -222,17 +222,14 @@ namespace SimulationSystem.V0._1.Modules.Detect
         }
         private void CheckThisObjectResetBehaviour()
         {
-               if (ForceUngrabThisObject)
-                {
+               
+            if (ForceUngrabThisObject)
+            {
                     foreach (var tempGrabbable in SimulationManager.instance.currentState.stateGrabbables)
                     {
-                        tempGrabbable.ForceUnGrab();
-                        if (!SimulationManager.instance.isAssessmentMode)
-                        {
-                        tempGrabbable.GetComponent<XRGrabInteractable>().enabled = false;
-                        }                 
+                        tempGrabbable.ForceUnGrab();            
                     }
-                }
+            }
             
             if (ObjectBehaviourOnDetect == ObjectBehaviourOnDetect._MoveObjectToDetectPos)
                 {
@@ -264,31 +261,35 @@ namespace SimulationSystem.V0._1.Modules.Detect
 
                     }
                 }
-                else
+            
+            else
+            {
+                    
+                foreach (var VARIABLE in _objectMovementHelper)
                 {
-                    foreach (var VARIABLE in _objectMovementHelper)
-                    {
-                        
                     if (!DontDoAnything)
                     {
-                    VARIABLE.ForceResetNow();
+                        VARIABLE.ForceResetNow();
                     }
-                        if (deRegisterThisObjectOnDetect)
-                        {
-                            VARIABLE.DeregisterResettable();
-                        }
+                        
+                    if (deRegisterThisObjectOnDetect)
+                    {
+                        VARIABLE.DeregisterResettable();
+                    }
 
-                      /*  if (SimulationManager.instance.isAssessmentMode)
-                        {
-                            VARIABLE.ResetThisObjectOnRelease = true;
-                            VARIABLE.ForceUpdateResettablePos(DestinationTransform);
-                         //   SimulationManager.instance.currentState.onStateComplete.AddListener(() => VARIABLE.GetComponent<PointableUnityEventWrapper>().enabled = true);
+                    if (SimulationManager.instance.isAssessmentMode)
+                    {
+                        VARIABLE.ResetThisObjectOnRelease = true;
+                        VARIABLE.ForceUpdateResettablePos(DestinationTransform);
+                        //   SimulationManager.instance.currentState.onStateComplete.AddListener(() => VARIABLE.GetComponent<PointableUnityEventWrapper>().enabled = true);
 
-                        }*/
                     }
                 }
-
+                
             }
+
+            
+        }
         
 
 

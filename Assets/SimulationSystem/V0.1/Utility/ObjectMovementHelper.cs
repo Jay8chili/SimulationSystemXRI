@@ -15,7 +15,7 @@ public class ObjectMovementHelper : MonoBehaviour
     #endregion
 
     #region  MoveToHelperDeclarations
-    private int _resetDelay = 2;
+    private int _resetDelay = 0;
    
     #endregion
 
@@ -23,7 +23,6 @@ public class ObjectMovementHelper : MonoBehaviour
     private XRGrabInteractable _event;
     private bool _setupDone;
     private MyTransform ResetTransform;
-    private Task PrevTask;
 
     private TaskCompletionSource<bool> _moveToPositionTaskCompletionSource;
     private CancellationTokenSource _moveToPositionCancellationToken;
@@ -33,12 +32,10 @@ public class ObjectMovementHelper : MonoBehaviour
 
     private void Awake()
     {
-        //**Done**  //! Why this? This creates an empty gameObject in the scene. Can be changed to a Transform instead.
-      
         SetupObject();
         RegisterObject();
 
-       // onDestinationReached.AddListener(()=> { GetComponent<PointableCanvasUnityEventWrapper>().enabled = true; });
+      //  onDestinationReached.AddListener(()=> { GetComponent<XRGrabInteractable>().enabled = true; });
     }
 
     private void OnDisable()
@@ -118,7 +115,7 @@ public class ObjectMovementHelper : MonoBehaviour
     {
         if (ResetThisObjectOnRelease)
         {
-            MoveToPosition(ResetTransform.GetThisTransform(), true);
+            MoveToPosition(ResetTransform.GetTransform(), true);
         }
 
     }
@@ -130,21 +127,31 @@ public class ObjectMovementHelper : MonoBehaviour
     public void ForceUpdateResettablePos(Transform ResetToThisTransform)
     {
         ResetTransform = new MyTransform(ResetToThisTransform);
+       
     }
     public void ForceResetNow()
     {
         if (GetComponent<XRGrabInteractable>())
         {
+            Debug.LogError("In First If");
             var TempGrabbable = GetComponent<XRGrabInteractable>();
             if (TempGrabbable.isActiveAndEnabled)
             {
+                Debug.LogError("In 2nd If");
+
                 TempGrabbable.ForceUnGrab();
-                MoveToPosition(ResetTransform.GetThisTransform(), true);
+                MoveToPosition(ResetTransform.GetTransform(), true);
             }
             else
-            { MoveToPosition(ResetTransform.GetThisTransform(), true); }
+            {
+                Debug.LogError("In 3rdnd If");
+
+                MoveToPosition(ResetTransform.GetTransform(), true); 
+            }
         }
-        else MoveToPosition(ResetTransform.GetThisTransform(), true);
+        else MoveToPosition(ResetTransform.GetTransform(), true);
+                Debug.LogError("Exiting");
+
     }
 
     public void DeregisterResettable()

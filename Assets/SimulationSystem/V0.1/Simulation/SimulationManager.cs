@@ -136,8 +136,8 @@ namespace SimulationSystem.V0._1.Simulation
             _stateChangeCountdownTimer.OnTimerRunning += timerProgress =>
             {
                 var timeLeft = (1 - timerProgress) * stateChangeCountdownTime;
-                _stateChangeCountdownUITextHandler.UpdateText((timeLeft).ToString("0"));
-                _stateChangeCountdownUIImageHandler.OnDetecting(Mathf.InverseLerp(stateChangeCountdownTime, 0, timeLeft));
+                //_stateChangeCountdownUITextHandler.UpdateText((timeLeft).ToString("0"));
+                //_stateChangeCountdownUIImageHandler.OnDetecting(Mathf.InverseLerp(stateChangeCountdownTime, 0, timeLeft));
             };
             _stateChangeCountdownTimer.OnTimerEnd += () =>
             {

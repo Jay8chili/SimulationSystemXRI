@@ -156,8 +156,8 @@ namespace SimulationSystem.V0._1.Editor
                     EditorGUILayout.Space(5);
                     var uiParentAnimationHandlerSerializedProperty = serializedObject.FindProperty("uiParentAnimationHandler");
                     EditorGUILayout.PropertyField(uiParentAnimationHandlerSerializedProperty,true);
-                    var buttonPointableUnityEventWrapperSerializedProperty = serializedObject.FindProperty("buttonPokeInteractable");
-                    EditorGUILayout.PropertyField(buttonPointableUnityEventWrapperSerializedProperty, true);
+   /*                 var buttonPointableUnityEventWrapperSerializedProperty = serializedObject.FindProperty("buttonPokeInteractable");
+                    EditorGUILayout.PropertyField(buttonPointableUnityEventWrapperSerializedProperty, true);*/
                     serializedObject.ApplyModifiedProperties();
                     
                     _simulationState.nextStateOnObjectGrab = false;

@@ -54,38 +54,7 @@ public static class ExtensionMethods
 
     public static void ForceUnGrab(this XRGrabInteractable a)
     {
-       
-           // var tempRightInteractor = GameManager.Instance.PlayerManager.RightGrabInteractor.SelectedInteractable;
-          //  var templeftInteractor = GameManager.Instance.PlayerManager.LeftGrabInteractor.SelectedInteractable;
-
-          //  var selectedInteractable = a.GetComponentsInChildren<HandGrabInteractable>();
-/*
-            foreach (var VARIABLE in selectedInteractable)
-            {
-                if (VARIABLE == tempRightInteractor)
-                {
-                    GameManager.Instance.PlayerManager.RightGrabInteractor.Unselect();
-                    GameManager.Instance.PlayerManager.RightGrabInteractor.Disable();
-
-                }
-                else if (VARIABLE == templeftInteractor)
-                {
-                    GameManager.Instance.PlayerManager.LeftGrabInteractor.Unselect();
-                    GameManager.Instance.PlayerManager.LeftGrabInteractor.Disable();
-
-
-                }
-
-            }*/
-       
            a.enabled= false;
-        
-        /*
-        foreach (var VARIABLE in TempInteractables)
-        {
-            VARIABLE.Disable();
-        }*/
-
     }
 
 
@@ -109,7 +78,7 @@ public class MyTransform
         ThisTransform.localScale = tf.localScale;
     }
 
-    public TransformContainer GetThisTransform()
+    public TransformContainer GetTransform()
     {
         return ThisTransform;
     }
