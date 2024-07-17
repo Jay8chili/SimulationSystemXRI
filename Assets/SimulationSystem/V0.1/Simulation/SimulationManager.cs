@@ -136,8 +136,8 @@ namespace SimulationSystem.V0._1.Simulation
             _stateChangeCountdownTimer.OnTimerRunning += timerProgress =>
             {
                 var timeLeft = (1 - timerProgress) * stateChangeCountdownTime;
-                //_stateChangeCountdownUITextHandler.UpdateText((timeLeft).ToString("0"));
-                //_stateChangeCountdownUIImageHandler.OnDetecting(Mathf.InverseLerp(stateChangeCountdownTime, 0, timeLeft));
+                _stateChangeCountdownUITextHandler.UpdateText((timeLeft).ToString("0"));
+                _stateChangeCountdownUIImageHandler.OnDetecting(Mathf.InverseLerp(stateChangeCountdownTime, 0, timeLeft));
             };
             _stateChangeCountdownTimer.OnTimerEnd += () =>
             {
@@ -161,6 +161,7 @@ namespace SimulationSystem.V0._1.Simulation
             if(setSimulationModeUI != null) setSimulationModeUI.OnDetectOnce();
             else SetMode(false);
 
+            
         }
 
         #endregion
@@ -319,7 +320,9 @@ namespace SimulationSystem.V0._1.Simulation
             {
                 if (simulationTransform.gameObject.activeSelf)
                 {
+
                     var state = simulationTransform.GetComponent<SimulationState>();
+                    state.setGrabbableHelperEvents();
                     if ((setAssessmentMode && state.playStateInAssessmentMode) || !setAssessmentMode) 
                     {   simulationStates.Add(state);
                         BufferedStates.Add(state);

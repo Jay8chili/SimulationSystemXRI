@@ -133,25 +133,20 @@ public class ObjectMovementHelper : MonoBehaviour
     {
         if (GetComponent<XRGrabInteractable>())
         {
-            Debug.LogError("In First If");
+            
             var TempGrabbable = GetComponent<XRGrabInteractable>();
             if (TempGrabbable.isActiveAndEnabled)
-            {
-                Debug.LogError("In 2nd If");
-
+            {  
                 TempGrabbable.ForceUnGrab();
                 MoveToPosition(ResetTransform.GetTransform(), true);
             }
             else
             {
-                Debug.LogError("In 3rdnd If");
-
                 MoveToPosition(ResetTransform.GetTransform(), true); 
             }
         }
         else MoveToPosition(ResetTransform.GetTransform(), true);
-                Debug.LogError("Exiting");
-
+         
     }
 
     public void DeregisterResettable()

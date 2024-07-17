@@ -7,9 +7,9 @@ using SimulationSystem.V0._1.Utility.Event;
 using SimulationSystem.V0._1.Utility.Miscellanous;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit;/*
 using Timer = SimulationSystem.V0._1.Utility.Miscellanous.Timer;
-using WrongTimer = SimulationSystem.V0._1.Utility.Miscellanous.WrongTimer;
+using WrongTimer = SimulationSystem.V0._1.Utility.Miscellanous.WrongTimer;*/
 namespace SimulationSystem.V0._1.Modules.Detect
 {
     public abstract class DetectAbstract : MonoBehaviour
@@ -40,7 +40,7 @@ namespace SimulationSystem.V0._1.Modules.Detect
         [Header("Detect Timer Control")]
         [Space(3f)]
         [SerializeField] public bool resetTimerOnDetectionStop;
-        [SerializeField] public float detectTimer;
+        public float detectTimer;
         
         [SerializeField] private UIImageHandler progressFillImage;
         private UIAnimationHandler _progressFillImageAnimationHandler;

@@ -1,0 +1,4 @@
+This is an audio prompt step.
+This is a grab step. Please grab the focused object.
+Place the cube in the detect spot.
+This is a UI Step.

@@ -186,7 +186,7 @@ namespace SimulationSystem.V0._1.Simulation
         }
 
 
-        private void setGrabbableHelperEvents()
+        public void setGrabbableHelperEvents()
         {
             foreach (var GrabbableHelper in GrabbableHelper)
             {
