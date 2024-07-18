@@ -9,7 +9,7 @@ namespace SimulationSystem.V0._1.Modules.Detect.Legacy
     [RequireComponent(typeof(Detectable))]
     public class DetectMultiple : DetectAbstract
     {
-        [SerializeField] private float detectTimer = 3;
+        private float detectTimer2 = 3;
         [SerializeField] List<DetectObject> detectObjects = new List<DetectObject>();
 
         [Space(10)]
@@ -41,14 +41,14 @@ namespace SimulationSystem.V0._1.Modules.Detect.Legacy
                     }
                     timer += Time.deltaTime;
                     
-                    if (timer > detectTimer)
+                    if (timer > detectTimer2)
                     {
                         onAllDetectComplete?.Invoke();
                         timer = 0;
                         canDetect = false;
                     }
                     else 
-                        onAllDetecting?.Invoke(Mathf.InverseLerp(0, detectTimer, timer));
+                        onAllDetecting?.Invoke(Mathf.InverseLerp(0, detectTimer2, timer));
                 }
             }
         }
