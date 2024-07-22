@@ -12,6 +12,10 @@ namespace Wave.OpenXR.Samples.Hand
         public bool isLeft = false;
         [SerializeField] List<GameObject> Childs = new List<GameObject>();
 
+        private void Start()
+        {
+           
+        }
         void Update()
         {
             HandJoint joint = HandTracking.GetHandJointLocations(isLeft ? HandFlag.Left : HandFlag.Right)[jointNum];
@@ -29,6 +33,8 @@ namespace Wave.OpenXR.Samples.Hand
             {
                 Childs[i].SetActive(_SetActive);
             }
+
+          
         }
     }
 

@@ -51,9 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faa7ecd37a2d2b94d98c5cabe4c85b24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Joint_Prefab: {fileID: 2020227273748331428, guid: 750b7df97f1783b44b91bbaaa9b9d65b, type: 3}
-  LeftHand: {fileID: 5952895992196874652}
-  RightHand: {fileID: 5952895991885682859}
+  jointPrefab: {fileID: 0}
+  leftHand: {fileID: 0}
+  rightHand: {fileID: 0}
 --- !u!114 &6420225679362252570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,9 +66,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93517fb9198ee33428984693d60b4061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ActionAsset: {fileID: -944628639613478452, guid: 699f4d2073ed2e34ea7f7944795b868c, type: 3}
-  RightPinchR: {fileID: 3692605411926281237, guid: 699f4d2073ed2e34ea7f7944795b868c, type: 3}
-  LeftPinchR: {fileID: 2124456439736387461, guid: 699f4d2073ed2e34ea7f7944795b868c, type: 3}
+  ActionAsset: {fileID: -944628639613478452, guid: 699f4d2073ed2e34ea7f7944795b868c,
+    type: 3}
+  RightPinchR: {fileID: 3692605411926281237, guid: 699f4d2073ed2e34ea7f7944795b868c,
+    type: 3}
+  LeftPinchR: {fileID: 2124456439736387461, guid: 699f4d2073ed2e34ea7f7944795b868c,
+    type: 3}
   RightPinchPoseGObj: {fileID: 6420225678769817206}
   LeftPinchPoseGObj: {fileID: 6420225679319038563}
 --- !u!114 &6420225679362252569
@@ -83,9 +86,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be2b7b0a80ee6ac498ac4ff6bc764cf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ActionAsset: {fileID: -944628639613478452, guid: 699f4d2073ed2e34ea7f7944795b868c, type: 3}
-  LeftPinchStrengthR: {fileID: 7375677697711315273, guid: 699f4d2073ed2e34ea7f7944795b868c, type: 3}
-  RightPinchStrengthR: {fileID: 2603460548863922366, guid: 699f4d2073ed2e34ea7f7944795b868c, type: 3}
+  ActionAsset: {fileID: -944628639613478452, guid: 699f4d2073ed2e34ea7f7944795b868c,
+    type: 3}
+  LeftPinchStrengthR: {fileID: 7375677697711315273, guid: 699f4d2073ed2e34ea7f7944795b868c,
+    type: 3}
+  RightPinchStrengthR: {fileID: 2603460548863922366, guid: 699f4d2073ed2e34ea7f7944795b868c,
+    type: 3}
   LWR: {fileID: 6420225678699395646}
   RWR: {fileID: 6420225678551827397}
 --- !u!1 &5952895991797361069
@@ -135,6 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TrackingType: 0
   m_UpdateType: 0
+  m_IgnoreTrackingState: 0
   m_PositionInput:
     m_UseReference: 0
     m_Action:
@@ -173,6 +180,18 @@ MonoBehaviour:
         m_Groups: 
         m_Action: Rotation Input
         m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  m_TrackingStateInput:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Tracking State Input
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 59f9e4e6-8f72-4039-8662-503763f7733f
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
   m_PositionAction:
@@ -241,9 +260,17 @@ Camera:
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -388,6 +415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SelectingGameObject: {fileID: 0}
   RayPose: {fileID: 6420225678769817207}
+  RayMesh: {fileID: 0}
   RayRadius: 0.03
   RayLength: 30
   CastRange: 2
@@ -440,6 +468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SelectingGameObject: {fileID: 0}
   RayPose: {fileID: 6420225679319038564}
+  RayMesh: {fileID: 0}
   RayRadius: 0.03
   RayLength: 30
   CastRange: 2
