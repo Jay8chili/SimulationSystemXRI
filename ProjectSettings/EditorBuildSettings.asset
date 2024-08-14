@@ -8,13 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ExampleGrab.unity
     guid: a9d825e1d5a8e75469eb6e6ab9669a94
-  - enabled: 1
-    path: Assets/Samples/VIVE OpenXR ToolKit Samples - Android/1.0.5/VIVE OpenXR
-      Toolkit Samples/HandTracking/HandInteractionSample.unity
-    guid: 197033d17ca734640b4ca8225d6c3ece
-  - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 0
+    path: Assets/Wave/Essence/Hand/Model/5.6.0-r.10.2/Demo/NaturalHand.unity
+    guid: 5a38ad072c92c8f4ab668c159dadbbed
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 4afc02b5ce35f5344be37b2b72dce234,
       type: 2}

@@ -287,7 +287,7 @@ namespace SimulationSystem.V0._1.Simulation
             DummyJsonSimEnd obj = new DummyJsonSimEnd();
             obj.end_ts = epochTime.ToString();
             string json = obj.ToString();
-         //   APIManager.Instance.StartCoroutine(APIManager.Instance.POSTRequest(json, ApiUrlManager.SimulationEnd(APIManager.Instance.simulationID), null));
+            APIManager.Instance.StartCoroutine(APIManager.Instance.POSTRequest(json, ApiUrlManager.SimulationEnd(APIManager.Instance.simulationID), null));
         }
 
         void Update()
