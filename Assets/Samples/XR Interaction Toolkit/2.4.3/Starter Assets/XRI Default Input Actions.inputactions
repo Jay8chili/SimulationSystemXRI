@@ -739,6 +739,28 @@
                 },
                 {
                     "name": "",
+                    "id": "c4c15827-3c42-4a99-bb87-20664e0ca5da",
+                    "path": "<VIVEFocus3Controller>{LeftHand}/gripPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f067c496-6682-4cb3-8e3e-b45d346ba00c",
+                    "path": "<VIVEFocus3Controller>{LeftHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "49a23327-a116-48c0-8af9-0d2c50c15a88",
                     "path": "<XRController>{LeftHand}/grip",
                     "interactions": "",
@@ -1457,6 +1479,28 @@
                     "name": "",
                     "id": "a0bdf354-31c9-43bd-83b7-50be72f7efa7",
                     "path": "<OculusTouchController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "df834e9d-7259-4a7f-ac58-851cad2efc83",
+                    "path": "<VIVEFocus3Controller>{RightHand}/gripPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a1aee1a7-0b8b-4d30-a8e1-9ae17da2a41d",
+                    "path": "<VIVEFocus3Controller>{RightHand}/triggerPressed",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
