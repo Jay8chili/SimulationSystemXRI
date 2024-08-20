@@ -280,8 +280,8 @@ namespace SimulationSystem.V0._1.Modules.Detect
                     if (SimulationManager.instance.isAssessmentMode)
                     {
                         VARIABLE.ResetThisObjectOnRelease = true;
-                        VARIABLE.ForceUpdateResettablePos(DestinationTransform);
-                        //   SimulationManager.instance.currentState.onStateComplete.AddListener(() => VARIABLE.GetComponent<PointableUnityEventWrapper>().enabled = true);
+                        VARIABLE.ForceResetNow();
+                        SimulationManager.instance.currentState.onStateComplete.AddListener(() => VARIABLE.GetComponent<XRGrabInteractable>().enabled = true);
 
                     }
                 }

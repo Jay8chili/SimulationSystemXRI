@@ -3,7 +3,6 @@ using System.Collections;
 using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
-
 namespace SimulationSystem.V0._1.Utility.APIs
 {
     public class APIManager : MonoBehaviour
@@ -50,11 +49,11 @@ namespace SimulationSystem.V0._1.Utility.APIs
                 token = PlayerPrefs.GetString("AuthToken");
             return token;
         }
-        
+
         private void SetAuthToken(bool success, string response, long code)
-        {/*
-            JObject json = JObject.Parse(response);
-            _authorizationToken = json["auth_token"].ToString();*/
+        {
+            Assessment.AuthTokenResponse a = JsonUtility.FromJson<Assessment.AuthTokenResponse>(response );
+           _authorizationToken = a.auth_token;
         }
 
         #region GETRequest

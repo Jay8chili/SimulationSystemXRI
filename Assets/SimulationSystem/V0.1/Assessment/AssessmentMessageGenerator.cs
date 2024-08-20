@@ -36,7 +36,7 @@ namespace SimulationSystem.V0._1.Assessment
             Debug.Log(json);
             if (SimulationManager.instance.Scoretext != null) { SimulationManager.instance.Scoretext.text = "Score: 0/" + SimulationManager.instance.totalScore; } 
             //  var url = "https://hint.8chili.com/api/v1.0/consim/simulations/4/assessment/start";
-          /*uncomment later*/ //  APIManager.Instance.StartCoroutine(APIManager.Instance.POSTRequest(json, ApiUrlManager.SimulationStart(APIManager.Instance.simulationID), null));
+         APIManager.Instance.StartCoroutine(APIManager.Instance.POSTRequest(json, ApiUrlManager.SimulationStart(APIManager.Instance.simulationID), null));
         }
         public static void GenerateAssessmentStepResult(int stepIndex, float stepScore, AssessmentStatus assessmentStatus, string errorMessage)
         {
@@ -57,8 +57,7 @@ namespace SimulationSystem.V0._1.Assessment
                 SimulationManager.instance.Scoretext.text = "Score: " + SimulationManager.instance.currentScore + "/" + SimulationManager.instance.totalScore;
             }
             // var url = "https://hint.8chili.com/api/v1.0/consim/simulations/4/assessment/step/submit";
-
-           /*uncomment later*/// APIManager.Instance.StartCoroutine(APIManager.Instance.POSTRequest(json, ApiUrlManager.AssessmentStepSubmit(APIManager.Instance.simulationID), null));
+            APIManager.Instance.StartCoroutine(APIManager.Instance.POSTRequest(json, ApiUrlManager.AssessmentStepSubmit(APIManager.Instance.simulationID), null));
         }
         public static void UpdateAssessmentSheet()
         {

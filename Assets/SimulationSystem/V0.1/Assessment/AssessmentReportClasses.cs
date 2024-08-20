@@ -24,6 +24,12 @@ namespace SimulationSystem.V0._1.Assessment
         public float score;
         public AssessmentStatus status;
     }
+
+    [System.Serializable]
+    public class AuthTokenResponse
+    {
+        public string auth_token;
+    }
     [Serializable]
     public enum AssessmentStatus
     {

@@ -119,8 +119,8 @@ namespace SimulationSystem.V0._1.Simulation
 
             if (hintButton != null)
             {
-               /* _hintButtonComponent = hintButton.GetComponent<Button>();
-                _hintButtonComponent.onClick.AddListener(CheckHintAssessment);   */
+                _hintButtonComponent = hintButton.GetComponentInChildren<Button>();
+                _hintButtonComponent.onClick.AddListener(CheckHintAssessment);
             }
             
             _stateChangeCountdownUITextHandler = stateChangeCountdownUI.GetComponent<UITextHandler>();
